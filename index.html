@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Credit</title>
+  </head>
+  <body>
+    <h1>Credit Tool</h1>
+
+    <form action="#">
+      <div class="credit">
+        <label for="loan-type">Loan Type</label>
+        <br />
+        <select name="type-entered" id="loan-type">
+          <option class="choose" value="choose">Choose One</option>
+          <option value="housing">Housing Loan</option>
+          <option value="car">Car Loan</option>
+          <option value="personal">Personal Finance</option>
+        </select>
+      </div>
+      <div class="term">
+        <label for="loan-term">Loan Term</label>
+        <br />
+        <input type="number" name="term-entered" id="loan-term" min="0" />
+      </div>
+      <div class="amount">
+        <label for="loan-amount">Loan Amount</label>
+        <br />
+        <input type="number" name="amount-entered" id="loan-amount" min="0" />
+      </div>
+      <input class="submit" type="submit" value="Calculate" />
+    </form>
+
+    <script src="code.js"></script>
+  </body>
+</html>
