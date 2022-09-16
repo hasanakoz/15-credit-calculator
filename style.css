@@ -34,9 +34,9 @@ select .choose {
 
 .submit {
   width: 82%;
-  height: 2.5rem;
+  height: 3rem;
   background-color: green;
   color: white;
   margin-top: 4rem;
-  border-radius: 5px;
+  border-radius: 10px;
 }
