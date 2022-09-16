@@ -40,3 +40,16 @@ select .choose {
   margin-top: 4rem;
   border-radius: 10px;
 }
+.result,
+td {
+  font-size: 2rem;
+}
+td,
+th {
+  border: 2px solid rgb(155, 155, 98);
+}
+
+.result h2 {
+  color: rgb(255, 204, 0);
+  font-size: larger;
+}
