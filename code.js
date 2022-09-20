@@ -5,37 +5,44 @@ const loanAmount = document.getElementById("loan-amount");
 const loanTerm = document.getElementById("loan-term");
 let installment = 0;
 let rate = 0;
+const result = document.querySelector(".result");
 
 calculateButton.addEventListener("click", () => {
-  if (loanType.value == "housing") {
-    rate = 1.29 / 100;
-  }
-  if (loanType.value == "car") {
-    rate = 1.79 / 100;
-  }
-  if (loanType.value == "personal") {
-    rate = 1.99 / 100;
+  if (
+    !loanType.value ||
+    !loanTerm.value ||
+    !loanAmount.value ||
+    loanType.value == "choose"
+  ) {
+    alert("Please enter all the necessary info in the form!");
+  } else {
+    if (loanType.value == "housing") {
+      rate = 1.29 / 100;
+    } else if (loanType.value == "car") {
+      rate = 1.79 / 100;
+    } else if (loanType.value == "personal") {
+      rate = 1.99 / 100;
+    }
   }
 
-  if (!loanType.value || !loanTerm.value || !loanAmount.value) {
-    alert("Please enter all the necessary info in the form!");
-  }
   installment =
     loanAmount.value *
     ((rate * (1 + rate) ** loanTerm.value) /
       ((1 + rate) ** loanTerm.value - 1));
 
   displayTable();
+  loanType.value = "";
+  loanTerm.value = "";
+  loanAmount.value = "";
+
   // result.textContent = `taksit: ${installment}`;
   // console.log(installment, x, loanType, loanAmount, loanTerm);
 });
 
 const displayTable = () => {
-  const result = document.querySelector(".result");
-
   result.innerHTML = `
   <h2 > Credit Info </h2>
-  <table class=>
+  <table>
       <tbody>
           <tr>
               <th>Loan Amount</th>
